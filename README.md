@@ -1,1 +1,1 @@
-# odoo_calculator
+# odin project calculator
