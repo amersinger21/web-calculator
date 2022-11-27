@@ -9,7 +9,7 @@
     <script src="./calc.js" defer></script>
   </head>
   <body>
-    <div id="calc-body" data-mode="normal">
+    <div id="calc-body" data-mode="normal" data-operation="none" data-input="first">
       <div class="window">
         <p id="display">0</p>
       </div>
@@ -26,12 +26,14 @@
         <button class="btn num-btn" id="2">2</button>
         <button class="btn num-btn" id="3">3</button>
         <button class="btn operator-btn" id="subtract">-</button>
+        <button class="btn num-btn" id=".">.</button>
         <button class="btn num-btn" id="0">0</button>
-        <button id="random">Random</button>
-        <button id="start">Start</button>
+        <button class="btn" id="invert">+ / -</button>
         <button class="btn operator-btn" id="add">+</button>
+        <button class="btn fun-btn" id="random">Random</button>
+        <button class="btn fun-btn" id="start">Start</button>
         <button class="btn" id="clear">Clear</button>
-        <button class="btn operator-btn" id="equals">=</button>
+        <button class="btn" id="equals">=</button>
       </div>
     </div>
   </body>
