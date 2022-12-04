@@ -6,6 +6,7 @@ const clearBtn = document.getElementById("clear");
 const equalsBtn = document.getElementById("equals");
 const operatorBtns = document.querySelectorAll(".operator-btn");
 const invertBtn = document.getElementById("invert");
+const decimalBtn = document.getElementById(".");
 const calcMode = document.querySelector("#calc-body");
 const url =
   "https://www.random.org/integers/?num=1&min=1&max=1000&col=1&base=10&format=plain&rnd=new";
@@ -123,6 +124,27 @@ numBtns.forEach((item) => {
     SetDisplayNumber();
   });
 });
+
+decimalBtn.addEventListener("click", () => {
+    let inputType = calcMode.getAttribute("data-input");
+
+    if(input.innerText.match(/[.]/)){
+      return;
+    }
+    if (handle !== null) {
+      clearInterval(handle);
+      handle = null;
+    }
+
+    if (inputType == "first") {
+      input.innerText = decimalBtn.id;
+      calcMode.setAttribute("data-input", "other");
+    } else if (inputType == "other") {
+      input.innerText += decimalBtn.id;
+    }
+
+    SetDisplayNumber();
+  });
 
 operatorBtns.forEach((operator) => {
   operator.addEventListener("click", () => {
