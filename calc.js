@@ -46,6 +46,15 @@ function doMath(first, second) {
     input.innerText = "Generating Factorial...";
     first = +first;
 
+    if (first < 0) {
+      setTimeout(() => {
+        input.innerText = "Impossible";
+      }, 1000);
+      setTimeout(() => {
+        Clear();
+      }, 1500);
+      return;
+    }
     for (i = first - 1; i > 1; i--) {
       first = first * i;
     }
@@ -193,4 +202,3 @@ startBtn.addEventListener(
 );
 
 //math function
-
